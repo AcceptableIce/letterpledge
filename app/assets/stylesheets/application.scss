@@ -39,6 +39,8 @@ h2 {
 	max-width: 1200px;
 	margin: 0 auto;
 	text-align: center;
+	align-self: stretch;
+	flex-grow: 1;
 }
 
 .content a {

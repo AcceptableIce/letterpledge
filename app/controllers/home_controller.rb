@@ -12,7 +12,8 @@ class HomeController < ApplicationController
 
 		if @user.valid?
 			customer = Stripe::Customer.create(
-				email: @user.email_address
+				email: @user.email_address,
+				source: params[:stripe_token]
 			)
 
 			@user.stripe_customer_id = customer.id
