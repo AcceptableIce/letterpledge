@@ -23,7 +23,7 @@
 			var pledgeAmount = Number(document.querySelector(".pledge-amount").value);
 			var pledgeLimit = Number(document.querySelector(".pledge-limit").value);
 			var pledgeLimitStatus = document.querySelector("input[name=limit]:checked").value;
-			var pledgeSubmit = document.querySelector(".pledge-submit");
+			var pledgeSubmit = document.querySelector(".pledgeSubmit");
 			var email = document.querySelector("#user_email_address").value;
 			var initialValidation = true;
 			var showError = function showError(error) {
@@ -69,7 +69,7 @@
 						stripeToken.name = "stripe_token";
 						stripeToken.value = response.id;
 						pledgeForm.appendChild(stripeToken);
-						
+
 						pledgeForm.submit();
 					} else {
 						showError(response.error.message);

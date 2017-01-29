@@ -80,6 +80,11 @@ input[type=text]:focus {
 	border-bottom: 2px solid darken($pledgeColor, 10%);
 }
 
+.unpledge {
+	margin: 10px 0;
+	font-size: 2.0em;
+}
+
 .pledge-submit:not(:disabled):hover {
 	background-color: lighten($pledgeColor, 10%);
 	border-bottom-color: $pledgeColor;
