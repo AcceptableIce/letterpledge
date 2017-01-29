@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Letterpledge</title>
+    <title>Letter Pledge</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,18 @@
   </head>
 
   <body>
-    <%= yield %>
+		<h1>Letter <span class="orange">Pledge</span></h1>
+    <div class="content">
+			<%= yield %>
+		</div>
+		<div class="footer">
+			Built by <a href="http://twitter.com/acceptableice">@AcceptableIce</a>
+			and <a href="http://twitter.com/karmeleonnn">@karmeleonnn</a>.
+			Check out the source on <a href="http://github.com/acceptableice/letterpledge">GitHub</a>.
+		</div>
+		<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+		<script type="text/javascript">
+  		Stripe.setPublishableKey("pk_test_uIfAKmnKHh33SY1JdBCaDebd");
+		</script>
   </body>
 </html>
