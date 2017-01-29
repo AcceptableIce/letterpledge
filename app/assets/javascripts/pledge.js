@@ -24,7 +24,7 @@
 			var pledgeLimit = Number(document.querySelector(".pledge-limit").value);
 			var pledgeLimitStatus = document.querySelector("input[name=limit]:checked").value;
 			var pledgeSubmit = document.querySelector(".pledge-submit");
-			var email = document.querySelector("#user_email").value;
+			var email = document.querySelector("#user_email_address").value;
 			var initialValidation = true;
 			var showError = function showError(error) {
 				document.querySelector(".stripe-error").innerHTML = error;
@@ -48,10 +48,28 @@
 				showError("Your pledge limit must be at least $1.");
 			}
 
-			if(initialValidation) {			
-				Stripe.card.createToken(pledgeForm, 0, function(status, response) {
+			if(initialValidation) {		
+				document.querySelectorAll(".rails-error").forEach(function(errorField) {
+					errorField.innerHTML = "";
+				});
+	
+				Stripe.card.createToken({
+					number: document.querySelector("#cc_number").value,
+					cvc: document.querySelector("#cvc").value,
+					exp_year: document.querySelector("#exp_year").value,
+					exp_month: document.querySelector("#exp_month").value
+				}, 
+				1, 
+				function(status, response) {
+					var stripeToken;
+
 					if(status === 200) {
-						pledgeForm.innerHTML += "<input type='hidden' name='stripeToken' value='" + response.id + "'/>";
+						stripeToken = document.createElement("input");
+						stripeToken.type = "hidden";
+						stripeToken.name = "stripe_token";
+						stripeToken.value = response.id;
+						pledgeForm.appendChild(stripeToken);
+						
 						pledgeForm.submit();
 					} else {
 						showError(response.error.message);
