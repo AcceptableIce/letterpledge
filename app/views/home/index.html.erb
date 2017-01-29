@@ -70,7 +70,7 @@
 		</div>
 	</div>
 	<div class="pledge-complete">
-		<%= u.submit "Pledge!", class:"pledge-submit", data: { disable_with: false } %>
+		<%= u.submit "Pledge!", id: "pledgeSubmit", class:"pledge-submit", data: { disable_with: false } %>
 	</div>
 <% end %>
 <div class="concerns">
@@ -119,8 +119,13 @@
 	</div>
 
 	<div class="concern">
+		<p class="question">Are you associated with Stripe or the ACLU?</p>
+		<p class="response">Nope, neither.</p>
+	</div>
+
+	<div class="concern">
 		<p class="question">Can I un-pledge?</p>
-		<p class="response">Yeah, click <a href="TODO">here</a>.</p>
+		<p class="response">Yeah, click <a href="/unsubscribe">here</a>.</p>
 	</div>
 </div>
 
