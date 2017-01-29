@@ -9,7 +9,7 @@
 
 <p class="information">
 	Every week, we'll charge you based on the Twitter rampage Trump went on those seven days. <br>
-	Every Monday, we'll donate it all to the <a href="http://aclu.org"/>ACLU</a> in his name.
+	As soon as the payments process, we'll donate it all to the <a href="http://aclu.org"/>ACLU</a> in his name.
 </p>
 <%= form_for @user, url: url_for(controller: "home", action: "pledge") do |u| %>
 	<div class="pledge">
@@ -40,7 +40,7 @@
 	<% if @user.errors.any? %>
 		<div id="error_explanation">		
 			<% @user.errors.full_messages.each do |msg| %>
-				<div class="payment-error"><%= msg %></div>
+				<div class="payment-error rails-error"><%= msg %></div>
 			<% end %>
 		</div>
 	<% end %>
@@ -62,7 +62,7 @@
 		</div>			
 		<div class="user-info-item inline">
 			<label for="cvc">CVC</label>
-			<input type="text" id="cvc" maxlength="4" data-stripe="cvc_check"/>
+			<input type="text" id="cvc" maxlength="4" data-stripe="cvc"/>
 		</div>
 		<div class="user-info-item">
 			<label for="zip_code">Zip Code</label>
@@ -70,7 +70,7 @@
 		</div>
 	</div>
 	<div class="pledge-complete">
-		<%= u.submit "Pledge!", class:"pledge-submit" %>
+		<%= u.submit "Pledge!", id: "pledgeSubmit", class:"pledge-submit", data: { disable_with: false } %>
 	</div>
 <% end %>
 <div class="concerns">
@@ -119,8 +119,13 @@
 	</div>
 
 	<div class="concern">
+		<p class="question">Are you associated with Stripe or the ACLU?</p>
+		<p class="response">Nope, neither.</p>
+	</div>
+
+	<div class="concern">
 		<p class="question">Can I un-pledge?</p>
-		<p class="response">Yeah, click <a href="TODO">here</a>.</p>
+		<p class="response">Yeah, click <a href="/unsubscribe">here</a>.</p>
 	</div>
 </div>
 

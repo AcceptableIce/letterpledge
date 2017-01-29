@@ -21,3 +21,4 @@
 .byebug_history
 
 /vendor/
+#/config/secrets.yml
