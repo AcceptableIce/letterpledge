@@ -1,0 +1,63 @@
+$pledgeColor: #FFA500;
+$mainFont: 'Patua One', serif;
+
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: $mainFont;
+	color: #333;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100%;
+}
+
+h1 {
+	font-size: 4.0em;
+	letter-spacing: 5px;
+	text-align: center;
+}
+
+h1 .orange {
+	color: #FFA500;
+}
+
+
+.content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.content a {
+	text-decoration: none;
+	color: #669df4;
+}
+
+
+.information {
+	font-size: 1.8em;
+}
+.footer {
+	width: 100%;
+	background-color: #333;
+	color: #fff;
+	padding: 4px 0;
+	text-align: center;
+	align-self: flex-end;
+}
+
+.footer a {
+	text-decoration: none;
+	color: lighten(#669df4, 10%);
+}
