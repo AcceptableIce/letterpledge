@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 	get "pledge", to: "home#index"
 	post "pledge", to: "home#pledge"
 
-	get "unsubscribe", to: "home#unsubscribe"
-	post "unsubscribe", to: "home#do_unsubscribe"
+	get "unsubscribe", to: "unsubscribe#index"
+	post "unsubscribe", to: "unsubscribe#do_unsubscribe"
 
 	post "charge_week", to: "home#charge_week"
 end

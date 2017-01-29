@@ -23,15 +23,15 @@
 			var pledgeAmount = Number(document.querySelector(".pledge-amount").value);
 			var pledgeLimit = Number(document.querySelector(".pledge-limit").value);
 			var pledgeLimitStatus = document.querySelector("input[name=limit]:checked").value;
-			var pledgeSubmit = document.querySelector(".pledgeSubmit");
+			var pledgeSubmit = document.querySelector("#pledgeSubmit");
 			var email = document.querySelector("#user_email_address").value;
 			var initialValidation = true;
 			var showError = function showError(error) {
 				document.querySelector(".stripe-error").innerHTML = error;
 			}
 
-			pledgeSubmit.disabled = true;
 			event.preventDefault();
+			pledgeSubmit.disabled = true;
 
 			if(!validateEmail(email)) {
 				initialValidation = false;
@@ -43,7 +43,7 @@
 				showError("You must pledge at least 1&cent;.");
 			}
 
-			if(pledgeLimitStatus && pledgeLimit < 0) {
+			if(pledgeLimitStatus === "true" && pledgeLimit <= 0) {
 				initialValidation = false;
 				showError("Your pledge limit must be at least $1.");
 			}
