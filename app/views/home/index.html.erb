@@ -8,9 +8,8 @@
 </p>
 
 <p class="information">
-	Every Friday, we'll charge you based on the Twitter rampage Trump went on that week.
-	Once the payments process, we'll add them all up and donate it all to the
-	<a href="http://aclu.org"/>ACLU</a> in his name.
+	Every week, we'll charge you based on the Twitter rampage Trump went on those seven days. <br>
+	Every Monday, we'll donate it all to the <a href="http://aclu.org"/>ACLU</a> in his name.
 </p>
 <%= form_for @user, url: url_for(controller: "home", action: "pledge") do |u| %>
 	<div class="pledge">
@@ -63,7 +62,7 @@
 		</div>			
 		<div class="user-info-item inline">
 			<label for="cvc">CVC</label>
-			<input type="text" id="cvc" maxlength="4" data-stripe="cvc"/>
+			<input type="text" id="cvc" maxlength="4" data-stripe="cvc_check"/>
 		</div>
 		<div class="user-info-item">
 			<label for="zip_code">Zip Code</label>
@@ -76,6 +75,11 @@
 <% end %>
 <div class="concerns">
 	<h2>Concerns You Might Have</h2>
+
+	<div class="concern">
+		<p class="question">When do I get charged?</p>
+		<p class="response">You'll be charged on a weekly basis, starting seven days after signing up.</p>
+	</div>
 
 	<div class="concern">
 		<p class="question">Why not count tweets from <a href="http://twitter.com/POTUS">@POTUS</a> as well?</p>
@@ -119,3 +123,5 @@
 		<p class="response">Yeah, click <a href="TODO">here</a>.</p>
 	</div>
 </div>
+
+<%= javascript_include_tag "pledge" %>

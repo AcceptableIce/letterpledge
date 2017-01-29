@@ -1,10 +1,7 @@
 $pledgeColor: #FFA500;
 $mainFont: 'Patua One', serif;
 
-/*
- *= require_tree .
- *= require_self
- */
+@import "home";
 
 html {
 	height: 100%;
@@ -25,9 +22,14 @@ h1 {
 	font-size: 4.0em;
 	letter-spacing: 5px;
 	text-align: center;
+	margin: 15px 0;
 }
 
-h1 .orange {
+h2 {
+	font-size: 3.0em;
+}
+
+.orange {
 	color: #FFA500;
 }
 

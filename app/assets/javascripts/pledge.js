@@ -49,7 +49,7 @@
 			}
 
 			if(initialValidation) {			
-				Stripe.card.createToken(pledgeForm, function(status, response) {
+				Stripe.card.createToken(pledgeForm, 0, function(status, response) {
 					if(status === 200) {
 						pledgeForm.innerHTML += "<input type='hidden' name='stripeToken' value='" + response.id + "'/>";
 						pledgeForm.submit();
