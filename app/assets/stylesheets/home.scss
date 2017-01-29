@@ -1,0 +1,169 @@
+$pledgeColor: #FFA500;
+$mainFont: 'Patua One', serif;
+
+body {
+	font-family: $mainFont;
+	color: #333;
+}
+
+.content {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1 {
+	font-size: 4.0em;
+	letter-spacing: 5px;
+}
+
+h1 .orange {
+	color: #FFA500;
+}
+
+.information {
+	font-size: 1.8em;
+}
+
+.information a {
+	text-decoration: none;
+	color: #669df4;
+}
+
+.pledge {
+	font-size: 2.4em;
+}
+
+input[type=number],
+input[type=text] {
+	border: none;
+	border-bottom: 2px solid $pledgeColor;
+	color: $pledgeColor;
+	width: 100px;
+	text-align: center;
+	font-size: 1.0em;
+	font-family: $mainFont;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+input[type=number]:focus,
+input[type=text]:focus {
+	border: 2px solid $pledgeColor;
+	outline: none;
+}
+
+.pledge .pledge-cents {
+	position: relative;
+	left: -8px;
+	top: -2px;
+	color: $pledgeColor;
+}
+
+.pledge .pledge-per-week {
+	color: $pledgeColor;
+}
+
+.limit-options {
+	margin: 20px 0;
+	padding: 15px 0;
+	font-size: 2.0em;
+	border-top: 2px solid darken($pledgeColor, 10%);
+	border-bottom: 2px solid darken($pledgeColor, 10%);
+}
+
+.limit-option:first-of-type {
+	margin-bottom: 10px;
+}
+
+.limit-option input[type=radio] {
+	visibility: hidden;
+	width: 0;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.limit-option input[type=radio]:checked + label {
+	border: 2px solid $pledgeColor;
+	padding: 5px;
+}
+
+.limit-option .limit-dollars {
+	color: $pledgeColor;
+}
+
+.pledge-complete {
+	margin: 20px 0;
+	padding: 15px 0;
+	border-top: 2px solid darken($pledgeColor, 10%);
+	border-bottom: 2px solid darken($pledgeColor, 10%);
+}
+
+.pledge-submit {
+	border: 0;
+	margin: 0;
+	padding: 5px 10px;
+	font-family: $mainFont;
+	background-color: $pledgeColor;
+	color: #fff;
+	font-size: 3.0em;
+	border-radius: 4px;
+	border-bottom: 2px solid darken($pledgeColor, 10%);
+}
+
+.pledge-submit:hover {
+	background-color: lighten($pledgeColor, 10%);
+	border-bottom-color: $pledgeColor;
+}
+
+.user-info {
+	margin: 0 auto;
+	max-width: 250px;
+}
+
+.user-info-item {
+	margin-bottom: 10px;
+}
+
+.user-info-item label {
+	font-size: 1.0em;
+	line-height: 1.5em;
+	display: block;
+	text-align: left;
+}
+
+.user-info-item input[type=text] {
+	width: 100%;
+	text-align: left;
+	font-size: 1.5em;
+}
+
+.user-info-item.inline {
+	display: inline-block;
+	width: calc(50% - 10px);
+}
+
+.user-info-item.inline:nth-child(n) {
+	margin-right: 5px;
+}
+
+.user-info-item.inline:nth-child(2n) {
+	margin-left: 5px;
+}
+
+.concerns h2 {
+	font-size: 2.0em;
+}
+
+.concerns .concern .question {
+	font-size: 1.2em;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.concerns .concern .response {
+	color: #333;
+	margin-top: 0;
+}

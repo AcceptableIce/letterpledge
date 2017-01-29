@@ -1,0 +1,126 @@
+<div class="content">
+	<h1>Letter <span class="orange">Pledge</span></h1>
+
+	<p class="information">
+		Help make Donald Trump's favorite thing (tweeting) <br>
+		and his least favorite thing (civil rights) one and the same.
+	</p>
+
+	<p class="information">
+		Pledge to donate for every 140 characters Trump tweets. <br>
+		(<a href="http://twitter.com/realDonaldTrump">@realDonaldTrump</a>
+		or
+		<a href="http://twitter.com/POTUS">@POTUS</a>)	
+	</p>
+
+	<p class="information">
+		Every Friday, we'll charge you based on the Twitter rampage Trump went on that week.
+		Once the payments process, we'll add them all up and donate it all to the
+		<a href="http://aclu.org"/>ACLU</a> in his name.
+	</p>
+	<%= form_tag({ controller: "home", action: "pledge" }, method: "post") do %>
+		<div class="pledge">
+			<span>I'll pledge<span>
+			<%= number_field_tag("pledgeAmount", "10", class: "pledge_input pledge-amount") %>
+			<span class="pledge-cents">&cent;</span>
+			<span> for ever 140 characters Trump tweets.</span>
+			<br>
+			<span>(That's about <span class="pledge-per-week">$4.90</span> a week on average.)</span>
+		</div>
+
+		<div class="limit-options">
+			<div class="limit-option">
+				<%= radio_button_tag("limit", "off", true) %>
+				<label for="limit_off">Don't limit my contribution.</label>
+			</div>
+			<div class="limit-option">
+				<%= radio_button_tag("limit", "on", false) %>
+				<label for="limit_on">
+					Limit my contribution to	
+						<span class="limit-dollars">$</span>
+						<%= number_field_tag("pledgeLimit", "25", class: "pledge-input pledge-limit") %>
+					a week.	
+				</label>
+			</div>
+		</div>
+		
+		<div class="user-info">
+			<div class="user-info-item">
+				<label for="email">Email</label>
+				<%= text_field_tag("email")%>
+			</div>
+			<div class="user-info-item">
+				<label for="cc_number">Credit Card #</label>
+				<%= text_field_tag("cc_number")%>
+			</div>
+			<div class="user-info-item inline">
+				<label for="email">Expiration Date</label>
+				<%= text_field_tag("email")%>
+			</div>			
+			<div class="user-info-item inline">
+				<label for="csv">CSV</label>
+				<%= text_field_tag("csv")%>
+			</div>
+			<div class="user-info-item">
+				<label for="zip_code">Zip Code</label>
+				<%= text_field_tag("zip_code")%>
+			</div>
+		</div>
+		<div class="pledge-complete">
+			<%= submit_tag("Pledge!", class: "pledge-submit") %>
+		</div>
+	<% end %>
+	<div class="concerns">
+		<h2>Concerns You Might Have</h2>
+
+		<div class="concern">
+			<p class="question">How do I know you'll actually donate the money?</p>
+			<p class="response">We'll post an image of our ACLU receipt on Twitter.</p>
+		</div>
+
+		<div class="concern">
+			<p class="question">Are you storing my credit card information??</p>
+			<p class="response">Your personal information is stored with Stripe.</p>
+		</div>
+
+		<div class="concern">
+			<p class="question">Doesn't Stripe charge per transaction?</p>
+			<p class="response">Yeah, 3% + $0.30 on every charge.</p>
+		</div>
+
+		<div class="concern">
+			<p class="question">I don't like that.</p>
+			<p class="response">That's fair. We recommend donating directly to the ACLU if that bothers you.</p>
+		</div>
+
+		<div class="concern">
+			<p class="question">What's the point of this, then?</p>
+			<p class="response">It's <i>symbolic</i>, man.</p>
+		</div>
+
+		<div class="concern">
+			<p class="question">Doesn't Stripe have special rules for non-profits?</p>
+			<p class="response">They do, but we're not an registered non-profit. If this takes off, we'll absolutely
+			contact them and see what they can do, though.</p>
+		</div>		
+		<div class="concern">
+			<p class="question">Can I un-pledge?</p>
+			<p class="response">Yeah, click <a href="TODO">here</a>.</p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	window.onload = function() {
+		var pledgeAmount = document.querySelector(".pledge-amount");
+		pledgeAmount.addEventListener("input", function() {
+			var pledge = Number(pledgeAmount.value);
+			var pledgePerWeekElement = document.querySelector(".pledge-per-week");
+
+			if(isNaN(pledge)) {
+				pledgePerWeekElement.innerHTML = "an invalid amount";
+			} else {
+				pledgePerWeekElement.innerHTML = "$" + (pledge * .49).toFixed(2);
+			}
+		}, false);
+	};
+</script>
