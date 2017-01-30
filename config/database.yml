@@ -10,10 +10,12 @@ default: &default
   database: letterpledge
   pool: 5
   timeout: 5000
+  password: nexuiz
+  port: 5432
 
 development:
   <<: *default
-  username: root
+  user: root
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
