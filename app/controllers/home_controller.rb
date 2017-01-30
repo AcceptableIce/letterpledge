@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+ skip_before_filter :verify_authenticity_token, only: [:charge_week]
+
+
 	def index
 		@user = User.new
 	end
@@ -58,7 +61,7 @@ class HomeController < ApplicationController
 
 
 	def charge_week
-
+		logger.debug params.to_s
 	end
 
 	private

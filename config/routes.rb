@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 	get "unsubscribe", to: "unsubscribe#index"
 	post "unsubscribe", to: "unsubscribe#do_unsubscribe"
 
-	post "charge_week", to: "home#charge_week"
+	mount StripeEvent::Engine, at: "/hooks"
 end
