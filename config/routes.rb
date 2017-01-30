@@ -10,6 +10,4 @@ Rails.application.routes.draw do
 	post "unsubscribe", to: "unsubscribe#do_unsubscribe"
 
 	mount StripeEvent::Engine, at: "/hooks"
-
-	get '.well-known/acme-challenge/i1YCWrFVckKvb8xxD8yPupwDSRU8ydD6kaKZOEOol3A' => 'home#letsencrypt'
 end

@@ -58,12 +58,7 @@ class HomeController < ApplicationController
 			render :unsubscribe
 		end
 	end
-
-	def letsencrypt
-      # use your code here, not mine
-      render text: "i1YCWrFVckKvb8xxD8yPupwDSRU8ydD6kaKZOEOol3A.WS_33fGcLQ-YGOLWqiMs88iyIamc5xR459oxfNpAxRI"
-    end
-
+	
 	private
 
 	def user_params
