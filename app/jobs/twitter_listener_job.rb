@@ -21,7 +21,7 @@ class TwitterListenerJob < ApplicationJob
 						text: object.text,
 						length: object.text.length,
 						date: DateTime.now,
-						twitter_id: object.id
+						twitter_id: object.id.to_s
 					)
 				else
 					logger.info 'Got a dupe tweet'
