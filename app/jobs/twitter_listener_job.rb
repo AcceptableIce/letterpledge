@@ -14,7 +14,7 @@ class TwitterListenerJob < ApplicationJob
 
 		client.filter({follow: '25073877'}) do |object|
 			if object.is_a?(Twitter::Tweet)
-				existing_tweet = Tweet.find_by(twitter_id: object.id)
+				existing_tweet = Tweet.find_by(twitter_id: object.id.to_s)
 				if not existing_tweet
 					logger.info 'Got a new tweet'
 					new_tweet = Tweet.create(
