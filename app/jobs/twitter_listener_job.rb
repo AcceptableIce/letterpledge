@@ -12,19 +12,24 @@ class TwitterListenerJob < ApplicationJob
 			config.access_token_secret	= Rails.application.secrets.twitter_oauth_token_secret
 		end
 
-		client.filter({follow: '25073877'}) do |object|
+		trump_id = '25073877'
+
+		client.filter({follow: trump_id}) do |object|
 			if object.is_a?(Twitter::Tweet)
-				existing_tweet = Tweet.find_by(twitter_id: object.id)
-				if not existing_tweet
-					logger.info 'Got a new tweet'
-					new_tweet = Tweet.create(
-						text: object.text,
-						length: object.text.length,
-						date: DateTime.now,
-						twitter_id: object.id
-					)
-				else
-					logger.info 'Got a dupe tweet'
+				if object.user.id == trump_id
+					existing_tweet = Tweet.find_by(twitter_id: object.id)
+					if not existing_tweet
+						logger.info 'Got a new Trump tweet:'
+						logger.info YAML::dump(object)
+						new_tweet = Tweet.create(
+							text: object.text,
+							length: object.text.length,
+							date: DateTime.now,
+							twitter_id: object.id
+						)
+					else
+						logger.info 'Got a dupe Trump tweet'
+					end
 				end
 			end
 		end
