@@ -14,14 +14,14 @@ class TwitterListenerJob < ApplicationJob
 
 		client.filter({follow: '25073877'}) do |object|
 			if object.is_a?(Twitter::Tweet)
-				existing_tweet = Tweet.find_by(twitter_id: object.id.to_s)
+				existing_tweet = Tweet.find_by(twitter_id: object.id)
 				if not existing_tweet
 					logger.info 'Got a new tweet'
 					new_tweet = Tweet.create(
 						text: object.text,
 						length: object.text.length,
 						date: DateTime.now,
-						twitter_id: object.id.to_s
+						twitter_id: object.id
 					)
 				else
 					logger.info 'Got a dupe tweet'
