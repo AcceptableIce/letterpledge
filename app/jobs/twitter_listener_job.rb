@@ -37,4 +37,4 @@ class TwitterListenerJob < ApplicationJob
 	end
 end
 
-TwitterListenerJob.perform_now()
+TwitterListenerJob.perform_later
