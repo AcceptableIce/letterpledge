@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
 	mount StripeEvent::Engine, at: "/hooks"
 
-	get '.well-known/acme-challenge/i1YCWrFVckKvb8xxD8yPupwDSRU8ydD6kaKZOEOol3' => 'home#letsencrypt'
+	get '.well-known/acme-challenge/i1YCWrFVckKvb8xxD8yPupwDSRU8ydD6kaKZOEOol3A' => 'home#letsencrypt'
 end
