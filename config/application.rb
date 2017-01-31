@@ -7,10 +7,11 @@ require 'stripe'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Rails.logger = Logger.new(STDOUT)
+if ENV["RAILS_LOG_TO_STDOUT"].present?
+	Rails.logger = Logger.new(STDOUT)
+end
 
 module Letterpledge
   class Application < Rails::Application
-    config.active_job.queue_adapter = :sidekiq
   end
 end
