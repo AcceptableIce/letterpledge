@@ -1,0 +1,72 @@
+{
+  "name": "Letter Pledge",
+  "description": "Turn the tide of tweets",
+  "scripts": {
+  },
+  "env": {
+    "ADMINIUM_URL": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_MAX_THREADS": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "REDIS_PROVIDER": {
+      "required": true
+    },
+    "REDISCLOUD_URL": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "STRIPE_PUBLISHABLE_KEY": {
+      "required": true
+    },
+    "STRIPE_SECRET_KEY": {
+      "required": true
+    },
+    "STRIPE_WEBHOOK_SECRET": {
+      "required": true
+    },
+    "TWITTER_CONSUMER_KEY": {
+      "required": true
+    },
+    "TWITTER_CONSUMER_SECRET": {
+      "required": true
+    },
+    "TWITTER_OAUTH_SECRET": {
+      "required": true
+    },
+    "TWITTER_OAUTH_TOKEN": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "adminium",
+    "heroku-postgresql",
+    "rediscloud",
+    "ssl"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
