@@ -1,7 +1,9 @@
 $pledgeColor: #FFA500;
 $mainFont: 'Patua One', serif;
+$socialButtonSize: 32px;
 
 @import "home";
+@import "social-share-button";
 
 html {
 	height: 100%;
@@ -69,4 +71,12 @@ h2 {
 .footer a {
 	text-decoration: none;
 	color: lighten(#669df4, 10%);
+}
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $socialButtonSize $socialButtonSize;
+    height: $socialButtonSize;
+    width: $socialButtonSize;
+  }
 }

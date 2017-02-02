@@ -10,5 +10,13 @@
 </p>
 
 <p class="information">
-	Thanks for participating!
+	Thanks for participating! Share your pledge on social media and help spread the word!
 </p>
+
+<%=
+	pledge_title = "Take the Letter Pledge today, and help turn Trump's tweets against him.";
+ 	social_share_button_tag("I just pledged " + @user.pledge.to_s + "\u00A2 to the ACLU for every 140 characters Trump tweets!", {
+		url: "https://letterpledge.com",
+		text: pledge_title,
+	}) 
+%>
