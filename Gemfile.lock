@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/AcceptableIce/social-share-button.git
-  revision: 0332a0945d48c551f9208f37ad9dd782390068c1
+  revision: 1fe011b65b1ca6653a3bbc9f43a8b13183d93d7b
+  ref: 1fe011b65b1ca6653a3bbc9f43a8b13183d93d7b
   specs:
     social-share-button (0.8.9)
       coffee-rails
