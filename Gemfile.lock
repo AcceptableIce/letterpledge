@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/AcceptableIce/social-share-button.git
+  revision: 5cd27dbf36e611e6e6794d002a564e70e491d16c
+  specs:
+    social-share-button (0.8.8)
+      coffee-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -74,7 +81,7 @@ GEM
       domain_name (~> 0.5)
     http-form_data (1.0.1)
     http_parser.rb (0.6.0)
-    i18n (0.7.0)
+    i18n (0.8.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -165,8 +172,6 @@ GEM
       rack-protection (>= 1.5.0)
       redis (~> 3.2, >= 3.2.1)
     simple_oauth (0.3.1)
-    social-share-button (0.8.8)
-      coffee-rails
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -235,7 +240,7 @@ DEPENDENCIES
   rails (~> 5.0.1)
   sass-rails (~> 5.0)
   sidekiq
-  social-share-button
+  social-share-button!
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe

@@ -33,7 +33,7 @@ gem 'stripe_event'
 
 gem 'sidekiq'
 
-gem 'social-share-button'
+gem 'social-share-button', git: "https://github.com/AcceptableIce/social-share-button.git"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
