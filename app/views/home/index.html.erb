@@ -19,11 +19,11 @@
 <%= form_for @user, url: url_for(controller: "home", action: "pledge") do |u| %>
 	<div class="pledge">
 		<span>I'll pledge<span>
-		<%= u.number_field :pledge, value: 10, class: "pledge-input pledge-amount" %>
+		<%= u.number_field :pledge, value: 20, class: "pledge-input pledge-amount" %>
 		<span class="pledge-cents">&cent;</span>
 		<span> for ever 140 characters Trump tweets.</span>
 		<br>
-		<span>(That's about <span class="pledge-per-week">$4.90</span> a week on average.)</span>
+		<span>(That's about <span class="pledge-per-week">$9.80</span> a week on average.)</span>
 	</div>
 
 	<div class="limit-options">
