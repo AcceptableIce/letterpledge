@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
 	get "unsubscribe", to: "unsubscribe#index"
 	post "unsubscribe", to: "unsubscribe#do_unsubscribe"
-
-	get "test", to: "home#test"
-
+	
 	mount StripeEvent::Engine, at: "/hooks"
 end
